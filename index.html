@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draco | Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="panel panel--cover" aria-label="Cover">
+        <div class="left-stack">
+            <a href="https://hackclub.com" class="flag-top" target="_blank" rel="noopener noreferrer">
+                <img src="flag-orpheus-top.png" alt="Hack Club">
+            </a>
+        </div>
+
+        <div class="hero-center">
+            <div class="headline-wrap">
+                <img src="Headline 2.png" alt="DRACO" class="headline">
+            </div>
+            <p class="subheader">Write your own backend framework, ship a live app using it, win prizes!!</p>
+            <p class="email-meta">1 May'26 - 30 May'26 | Ages 13 -18</p>
+            <form class="email-banner" action="#" method="post" autocomplete="on">
+                <div class="email-banner__inner">
+                    <img src="Email.png" alt="" class="email-banner__art">
+                    <label for="signup-email" class="visually-hidden">Email address</label>
+                    <input type="email" id="signup-email" name="email" class="email-banner__input" placeholder="yourname@gmail.com" autocomplete="email" inputmode="email" required>
+                    <button type="button" class="email-banner__submit" aria-label="Sign up"></button>
+                </div>
+            </form>
+            <img src="Dragon 3.png" alt="Dragon illustration" class="dragon">
+        </div>
+    </section>
+
+    <section class="panel panel--next" aria-label="Next">
+        <img src="Clouds.png" alt="Clouds positioned under dragon" class="panel-clouds-under">
+    </section>
+    <script>
+        (function () {
+            var form = document.querySelector('.email-banner');
+            var btn = document.querySelector('.email-banner__submit');
+            var inner = document.querySelector('.email-banner__inner');
+            var motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            form?.addEventListener('submit', function (e) {
+                e.preventDefault();
+            });
+
+            btn?.addEventListener('click', function (e) {
+                e.preventDefault();
+                if (!inner || !motionOk) {
+                    return;
+                }
+                inner.classList.remove('email-banner__inner--clicked');
+                void inner.offsetWidth;
+                inner.classList.add('email-banner__inner--clicked');
+                inner.addEventListener('animationend', function onEnd() {
+                    inner.removeEventListener('animationend', onEnd);
+                    inner.classList.remove('email-banner__inner--clicked');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
