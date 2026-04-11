@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Milestones under Clouds (stack)</title>
+  <style>
+    html,body{height:100%;margin:0;background:transparent;}
+    .stack {
+      position: relative;
+      display: inline-block; /* size to image intrinsic dimensions */
+      overflow: visible;
+    }
+    .stack img {
+      display: block;
+      max-width: none;
+      height: auto;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    /* bottom image = Milestones, top image = Clouds */
+    .stack .top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="stack" id="stack">
+    <!-- Bottom image: Milestones -->
+    <img src="Milestones.png" alt="Milestones (bottom)" id="bottom">
+    <!-- Top image: Clouds (placed above Milestones) -->
+    <img src="Clouds.png" alt="Clouds (top)" class="top" id="top">
+  </div>
+
+  <script>
+    // Center the top image over the bottom image by matching sizes.
+    (function(){
+      const bottom = document.getElementById('bottom');
+      const top = document.getElementById('top');
+      const stack = document.getElementById('stack');
+
+      function align() {
+        // wait until images have intrinsic sizes
+        if (!bottom.naturalWidth) return;
+        // size the wrapper to the bottom image's intrinsic dimensions
+        stack.style.width = bottom.naturalWidth + 'px';
+        stack.style.height = bottom.naturalHeight + 'px';
+        // position the top image at 0,0 so it sits above without clipping
+        top.style.width = top.naturalWidth + 'px';
+        top.style.height = top.naturalHeight + 'px';
+        top.style.objectFit = 'none';
+      }
+
+      bottom.decode?.().then(align).catch(align);
+      top.decode?.().then(align).catch(align);
+      // also align on window resize just in case
+      window.addEventListener('resize', align);
+    })();
+  </script>
+</body>
+</html>

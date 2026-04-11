@@ -430,3 +430,571 @@ body {
   }
 }
 
+/* Milestones wrapper — takes the same position the bare img had */
+.panel-milestones-wrap {
+  position: absolute;
+  left: 50%;
+  top: 80vh;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 100vw;
+  height: auto;
+  z-index: 1;
+}
+
+/* Milestones artwork placed under the clouds and fully fit to viewport */
+.panel-milestones-under {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+  object-position: center top;
+}
+
+/* Overlay grid — 4 rows stacked vertically to match the 4 boxes */
+.milestones-grid {
+  position: absolute;
+  inset: 0% 6% 20% 58%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2%;
+  pointer-events: none;
+  transform: translateY(1.6%);
+}
+
+.milestones-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2% 4%;
+  color: #820000;
+}
+
+.milestones-list {
+  list-style: disc;
+  padding-left: 1.2em;
+  margin: 0;
+  color: #820000;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(14px, 2vw, 22px);
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+/* Paragraph overlay — same proportions as .milestones-list */
+.milestones-paragraph {
+  margin: 0;
+  color: #820000;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(14px, 2vw, 22px);
+  font-weight: bold;
+  line-height: 1.7;
+}
+
+.milestones-paragraph code {
+  font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+  font-size: 0.92em;
+  font-weight: normal;
+}
+
+/* Ensure milestone paragraphs default to in-cell sizing (prevents accidental bleed) */
+.milestones-cell .milestones-paragraph {
+  width: auto;
+  max-width: 95%;
+}
+
+/* Marker for a wider paragraph (semantic only) */
+.milestones-paragraph--wide {
+  max-width: none;
+  width: auto;
+}
+
+/* Fourth milestone cell: keep standard cell layout */
+.milestones-cell--step4 {
+  align-items: stretch;
+  justify-content: center;
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* APPLY FULL-VIEWPORT BLEED ONLY TO THE PARAGRAPH INSIDE THE FOURTH MILESTONE CELL */
+.milestones-cell--step4 .milestones-paragraph--wide {
+  /* in-cell wide paragraph (no viewport bleed) */
+  max-width: none;
+  width: 100%;
+  transform: translate(-2%, 34%);
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+/* Isolate the fourth milestone so global milestone rules do not affect it.
+   This resets common properties so step4 can be positioned/styled independently. */
+.milestones-cell--step4 {
+  align-items: stretch;
+  justify-content: center;
+  text-align: left;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.milestones-cell--step4 .milestones-paragraph--wide {
+  /* in-cell wide paragraph (no viewport bleed) */
+  max-width: none;
+  width: 100%;
+  transform: translate(-2%, 34%);
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .milestones-cell--step4 .milestones-paragraph--wide {
+    transform: translate(-8%, 14%);
+  }
+}
+
+@media (max-width: 600px) {
+  .milestones-cell--step4 .milestones-paragraph--wide {
+    transform: translate(-14%, 24%);
+  }
+}
+
+.milestones-cell--step3 .milestones-paragraph + .milestones-paragraph {
+  margin-top: 0.65em;
+}
+
+/* Second milestone box: same typography, shifted to the left side of the panel */
+.milestones-cell--step2 {
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.milestones-cell--step2 .milestones-step2-block {
+  /* Restore original left-shift so the step2 copy sits over the left box */
+  transform: translate(-165%, -55%);
+  max-width: 95%;
+}
+
+.milestones-cell--step2 .milestones-paragraph + .milestones-paragraph {
+  margin-top: 0.65em;
+}
+
+/* Third milestone box: same typography and positioning scale as step 2 */
+.milestones-cell--step3 {
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+
+.milestones-cell--step3 .milestones-paragraph {
+  /* Reverted: keep step3 paragraph in normal flow (no manual offsets) */
+  transform: none;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .panel-milestones-wrap {
+    top: 80vh;
+  }
+  .milestones-grid {
+    inset: 4% 20% 4% 20%;
+  }
+  .milestones-cell--step2 .milestones-step2-block {
+    transform: translate(-38%, -10%);
+  }
+  .milestones-cell--step3 .milestones-paragraph {
+    transform: none;
+  }
+  .milestones-cell--step4 .milestones-paragraph--wide {
+    transform: translate(-8%, 14%);
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-milestones-wrap {
+    top: 96vh;
+  }
+  .milestones-grid {
+    inset: 3% 10% 3% 10%;
+  }
+  .milestones-cell--step2 .milestones-step2-block {
+    transform: translate(-18%, -8%);
+    max-width: 95%;
+  }
+  .milestones-cell--step3 .milestones-paragraph {
+    transform: none;
+    max-width: 100%;
+  }
+  .milestones-cell--step4 .milestones-paragraph--wide {
+    transform: translate(-14%, 24%);
+  }
+}
+
+/* Small header image that sits between clouds and the milestones artwork */
+.panel-milestones-header {
+  position: absolute;
+  left: 50%;
+  top: 60vh; /* slightly upward from previous position */
+  transform: translate(-50%, -12%); /* center and nudge upward */
+  width: auto;
+  max-width: 40vw; /* make the header smaller */
+  max-height: 16vh;
+  height: auto;
+  z-index: 1.5; /* between clouds (2) and milestones (1) visually */
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+  object-position: center;
+}
+
+@media (max-width: 900px) {
+  .panel-milestones-header {
+    top: 56vh;
+    max-width: 56vw;
+    max-height: 14vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-milestones-header {
+    top: 52vh;
+    max-width: 72vw;
+    max-height: 12vh;
+  }
+}
+
+/* Prizes header placed below the Milestones artwork */
+.panel-prizes-header {
+  position: absolute;
+  left: 50%;
+  top: 360vh; /* moved downward 5× (was 96vh -> 480vh) */
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 48vw;
+  height: auto;
+  z-index: 1; /* same layer as Milestones (below clouds) */
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+  object-position: center top;
+}
+
+@media (max-width: 900px) {
+  .panel-prizes-header {
+    top: 540vh;
+    max-width: 60vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-prizes-header {
+    top: 600vh;
+    max-width: 76vw;
+  }
+}
+
+/* Row of prize items placed under the prizes header */
+.panel-prize-row {
+  position: absolute;
+  left: 50%;
+  top: 390vh; /* halved the vertical gap to PrizesHeader (was 520vh) */
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6vw;
+  align-items: flex-start;
+  justify-content: center;
+  width: min(90vw, 1200px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.panel-prize-item {
+  width: min(28vw, 320px);
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
+}
+
+@media (max-width: 900px) {
+  .panel-prize-row {
+    top: 550vh;
+    gap: 4vw;
+  }
+  .panel-prize-item {
+    width: min(34vw, 260px);
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-prize-row {
+    top: 620vh;
+    gap: 3vw;
+  }
+  .panel-prize-item {
+    width: min(40vw, 220px);
+  }
+}
+
+/* FAQ header placed below the prize row */
+.panel-faq-header {
+  position: absolute;
+  left: 53%;
+  /* place just above the prize row */
+  top: 470vh;
+  transform: translate(-50%, -50%);
+  width: auto;
+  max-width: 56vw;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  object-fit: contain;
+  object-position: center top;
+}
+
+@media (max-width: 900px) {
+  .panel-faq-header {
+    top: 530vh;
+    max-width: 72vw;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-faq-header {
+    top: 600vh;
+    max-width: 88vw;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Decorative window graphic placed under the FAQ header (wrapper) */
+.panel-window-wrap {
+  position: absolute;
+  left: 50%; /* keep centered */
+  top: 480vh; /* placed below FAQ header */
+  transform: translate(-50%, 0);
+  width: min(76vw, 1200px);
+  max-width: 76vw;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.panel-window-wrap .panel-window-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+  pointer-events: none;
+}
+
+/* overlay grid that maps to the window's internal boxes */
+.panel-window-wrap .window-grid {
+  position: absolute;
+  inset: 9% 6% 9% 6%; /* leave margin to sit inside the frame */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns x 2 rows = 6 cells */
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3%;
+  pointer-events: none;
+}
+
+/* Temporary editing grid that overlays the window for uniform placement */
+.temp-grid {
+  position: absolute;
+  inset: 9% 6% 9% 6%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3%;
+  pointer-events: none;
+  z-index: 2;
+  visibility: hidden; /* hidden by default; set to visible while developing */
+}
+
+.temp-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 1.2vw;
+  text-align: center;
+}
+
+.panel-window-wrap .window-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center content horizontally */
+  justify-content: center; /* center content vertically */
+  color: #ffffff;
+  padding: 1.2vw;
+  text-align: center; /* center-align text inside the cell */
+  /* simplified: no text shadow for a cleaner look */
+}
+
+/* Fourth FAQ cell: shifted right */
+.panel-window-wrap .window-cell--legit {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 10%;
+  transform: translateX(8%);
+}
+
+/* Third FAQ cell: text left-indented, shifted left */
+.panel-window-wrap .window-cell--track {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 15%;
+  transform: translateX(-15%);
+}
+
+/* First FAQ cell: text left-indented, block shifted right within the box */
+.panel-window-wrap .window-cell--eligible {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 10%;
+  transform: translateX(8%);
+}
+
+/* allow specific cells to be positioned independently when locked */
+.panel-window-wrap .window-cell.locked,
+.panel-window-wrap .window-cell.moved,
+.panel-window-wrap .window-cell.third-left,
+.panel-window-wrap .window-cell.second-up {
+  /* Reset any manual offsets so all overlays sit uniformly centered */
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none;
+}
+
+.window-question {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: clamp(14px, 2.2vw, 20px);
+  color: #820000; /* HSB 0 100 51 */
+  margin: 0 0 6px 0;
+}
+
+.window-answer {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: clamp(12px, 1.9vw, 16px);
+  margin: 0;
+  color: #000000;
+}
+
+.window-resources {
+  list-style: disc;
+  padding-left: 1.2em;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: clamp(12px, 1.9vw, 16px);
+  color: #820000; /* bullet marker color */
+}
+
+.window-resources a {
+  color: #820000;
+  text-decoration: underline;
+}
+
+.window-resources a:hover {
+  opacity: 0.75;
+}
+
+/* Sixth FAQ cell: left-aligned and shifted upward */
+.panel-window-wrap .window-cell--more {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 10%;
+  transform: translate(-10%, -25%);
+}
+
+/* Email link in the 6th overlay */
+.window-cell .window-answer a[href^="mailto"] {
+  color: #820000;
+  text-decoration: underline;
+}
+
+.window-cell .window-answer a[href^="mailto"]:hover {
+  opacity: 0.75;
+}
+
+/* Hackatime / Lapse links in the 3rd overlay */
+.window-cell--track .window-answer a {
+  color: #820000;
+  text-decoration: underline;
+}
+
+.window-cell--track .window-answer a:hover {
+  opacity: 0.75;
+}
+
+/* Fifth FAQ cell: left-aligned, nudged upward */
+.panel-window-wrap .window-cell--resources {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 10%;
+  transform: translateY(-5%);
+}
+
+@media (max-width: 900px) {
+  .panel-window-wrap {
+    top: 560vh;
+    max-width: 88vw;
+  }
+  .panel-window-wrap .window-grid {
+    gap: 4%;
+    inset: 6% 5% 6% 5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-window-wrap {
+    top: 620vh;
+    max-width: 96vw;
+  }
+  .panel-window-wrap .window-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 3%;
+    inset: 6% 4% 6% 4%;
+  }
+}
+
+/* Fire footer — full-width image placed below the Window/FAQ section */
+.panel-fire-footer {
+  position: absolute;
+  left: 0;
+  top: 560vh;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .panel-fire-footer {
+    top: 640vh;
+  }
+}
+
+@media (max-width: 600px) {
+  .panel-fire-footer {
+    top: 720vh;
+  }
+}
+

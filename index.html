@@ -34,6 +34,74 @@
 
     <section class="panel panel--next" aria-label="Next">
         <img src="Clouds.png" alt="Clouds positioned under dragon" class="panel-clouds-under">
+        <img src="MilestonesHeader.png" alt="Milestones header between clouds and milestones" class="panel-milestones-header">
+        <div class="panel-milestones-wrap">
+          <img src="Milestones.png" alt="Milestones positioned under clouds" class="panel-milestones-under">
+          <div class="milestones-grid">
+            <div class="milestones-cell">
+              <ul class="milestones-list">
+                <li>Write a program that opens a TCP socket and listens on a port</li>
+                <li>Send a request to it — from your browser or with curl localhost:port</li>
+                <li>Print the raw output</li>
+                <li>That text you see? That's HTTP. That's all it ever was.</li>
+              </ul>
+            </div>
+            <div class="milestones-cell milestones-cell--step2">
+              <div class="milestones-step2-block">
+                <p class="milestones-paragraph">Now parse that raw text. Pull out the method (GET, POST), the path (/about, /api/users), the headers. Write the parser yourself, split on newlines. Handle the edge cases.</p>
+                <p class="milestones-paragraph">Done when: your code can tell you what path, method any request is asking for.</p>
+              </div>
+            </div>
+            <div class="milestones-cell milestones-cell--step3">
+              <p class="milestones-paragraph">When someone asks for /about, your server needs to know what to do. Build that system. Design your API — what should using YOUR framework feel like? This is your creative decision. This is why no two Draco frameworks look the same.</p>
+              <p class="milestones-paragraph">Done when: different paths call different functions.</p>
+            </div>
+            <div class="milestones-cell milestones-cell--step4">
+              <p class="milestones-paragraph milestones-paragraph--wide">After your router works, your handlers need to send something back to the browser. Write a function that puts a response onto the socket — status code, headers, body — and wrap it into something clean like <code>res.send()</code> or <code>res.json()</code>. Your design, your call. Now your framework can receive a request, route it, and reply to it. That's it. That's a working framework. Give it a name, publish it to npm, build something real on top of it, deploy it live, and send us the link.</p>
+            </div>
+          </div>
+        </div>
+        <img src="PrizesHeader 2.png" alt="Prizes header positioned below milestones" class="panel-prizes-header">
+        <div class="panel-prize-row" aria-hidden="true">
+            <img src="Prize.png" alt="Prize" class="panel-prize-item">
+            <img src="Prize.png" alt="Prize" class="panel-prize-item">
+            <img src="Prize.png" alt="Prize" class="panel-prize-item">
+        </div>
+        <img src="FaqHeader.png" alt="FAQ header placed below prizes" class="panel-faq-header">
+        <div class="panel-window-wrap" aria-hidden="true">
+          <img src="Window.png" alt="Window element placed below FAQ header" class="panel-window-img">
+          <div class="window-grid" role="group" aria-label="Window content grid">
+            <div class="window-cell window-cell--eligible">
+              <h3 class="window-question">Who is eligible?</h3>
+              <p class="window-answer">Draco is for highschoolers! You need to be 13-18 years old to participate. :)</p>
+            </div>
+            <div class="window-cell">
+              <h3 class="window-question">How much does it cost?</h3>
+              <p class="window-answer">100% free* - all the prizes are donated to us or paid for by us!</p>
+            </div>
+            <div class="window-cell window-cell--track">
+              <h3 class="window-question">How do I track my time?</h3>
+              <p class="window-answer">We use our very own <a href="https://hackatime.hackclub.com" target="_blank" rel="noopener noreferrer">Hackatime</a> and <a href="https://lapse.hackclub.com" target="_blank" rel="noopener noreferrer">Lapse</a> to track your time!</p>
+            </div>
+            <div class="window-cell window-cell--legit">
+              <h3 class="window-question">Is this legit? What's Hack Club?</h3>
+              <p class="window-answer">Hack Club is the world's largest community of teenage makers, and a 501(c)(3) nonprofit. It is supported by donations from tech companies like GitHub and individuals like Michael Dell.</p>
+            </div>
+            <div class="window-cell window-cell--resources">
+              <h3 class="window-question">Resources for building this?</h3>
+              <ul class="window-resources">
+                <li><a href="https://app.codecrafters.io/courses/http-server/overview" target="_blank" rel="noopener noreferrer">Build an HTTP server</a></li>
+                <li><a href="https://dev.to/travatech/ive-created-my-own-web-framework-from-scratch-2bi4" target="_blank" rel="noopener noreferrer">Example: someone who built their own framework</a></li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Web_frameworks" target="_blank" rel="noopener noreferrer">Introduction to Web Frameworks — MDN</a></li>
+              </ul>
+            </div>
+            <div class="window-cell window-cell--more">
+              <h3 class="window-question">I've got more questions...</h3>
+              <p class="window-answer">You can email me at <a href="mailto:shivanialive2007@gmail.com">shivanialive2007@gmail.com</a>! :)</p>
+            </div>
+          </div>
+        </div>
+        <img src="Fire.png" alt="Fire footer" class="panel-fire-footer">
     </section>
     <script>
         (function () {

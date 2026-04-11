@@ -1,0 +1,71 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Editor folders
+.vscode/
+.idea/
+*.iml
+
+# Swap / temp files
+*~
+*.swp
+*.tmp
+
+# Node / tooling
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+/dist/
+/build/
+/out/
+/coverage/
+
+# Logs
+.log
+*.log
+
+# Environment files (may contain secrets)
+.env
+.env.local
+.env.*.local
+
+# OS-generated files
+Icon?
+
+# Dependency directories for common languages/tools
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.turbo/
+.pytest_cache/
+
+# Generated lockfiles (if you prefer to track, remove these)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Ignore personal agent / terminal files (Cursor)
+.cursor/
+
+# Ignore compiled Python files
+__pycache__/
+*.py[cod]
+
+# Ignore coverage reports
+.coverage
+
+# Keep fonts and image assets tracked by default (remove these lines if you want to ignore them)
+# /fonts/
+# *.otf
+# *.ttf
+# *.png
+
