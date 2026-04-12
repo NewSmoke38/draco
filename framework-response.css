@@ -1,0 +1,128 @@
+:root {
+  --framework-accent: #820000;
+  --control-bg: rgba(20, 20, 20, 0.85);
+}
+
+.framework-card {
+  position: absolute; 
+  padding: 0;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  z-index: 100;
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start;
+  transition: opacity 0.2s ease;
+}
+
+.framework-text {
+  margin: 0;
+  color: var(--framework-accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: left;
+  width: 100%;
+}
+
+.framework-text code {
+  font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+}
+
+.framework-card.dragging {
+  cursor: grabbing;
+  opacity: 0.7;
+}
+
+.framework-card.locked {
+  cursor: default;
+}
+
+.framework-card.active {
+  z-index: 101;
+}
+
+.framework-controls {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--control-bg);
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10001;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  pointer-events: auto;
+  min-width: 800px;
+}
+
+.controls-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.control-input {
+  width: 70px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.8rem;
+}
+
+.card-selector {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.lock-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.lock-btn.locked {
+  background: #2ecc71;
+}
+
+.coord-display {
+  color: rgba(255,255,255,0.5);
+  font-family: monospace;
+  font-size: 0.7rem;
+  min-width: 200px;
+  text-align: center;
+}

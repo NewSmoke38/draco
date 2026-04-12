@@ -5,71 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Draco | Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="framework-response.css">
 </head>
 <body>
     <section class="panel panel--cover" aria-label="Cover">
         <div class="left-stack">
             <a href="https://hackclub.com" class="flag-top" target="_blank" rel="noopener noreferrer">
-                <img src="flag-orpheus-top.png" alt="Hack Club">
+                <img src="assets/flag-orpheus-top.png" alt="Hack Club">
             </a>
         </div>
 
         <div class="hero-center">
             <div class="headline-wrap">
-                <img src="Headline 2.png" alt="DRACO" class="headline">
+                <img src="assets/Headline 2.png" alt="DRACO" class="headline">
             </div>
             <p class="subheader">Write your own backend framework, ship a live app using it, win prizes!!</p>
             <p class="email-meta">1 May'26 - 30 May'26 | Ages 13 -18</p>
             <form class="email-banner" action="#" method="post" autocomplete="on">
                 <div class="email-banner__inner">
-                    <img src="Email.png" alt="" class="email-banner__art">
+                    <img src="assets/Email.png" alt="" class="email-banner__art">
                     <label for="signup-email" class="visually-hidden">Email address</label>
                     <input type="email" id="signup-email" name="email" class="email-banner__input" placeholder="yourname@gmail.com" autocomplete="email" inputmode="email" required>
                     <button type="button" class="email-banner__submit" aria-label="Sign up"></button>
                 </div>
             </form>
-            <img src="Dragon 3.png" alt="Dragon illustration" class="dragon">
+            <img src="assets/MainDragon.png" alt="Dragon illustration" class="dragon">
         </div>
     </section>
 
     <section class="panel panel--next" aria-label="Next">
-        <img src="Clouds.png" alt="Clouds positioned under dragon" class="panel-clouds-under">
-        <img src="MilestonesHeader.png" alt="Milestones header between clouds and milestones" class="panel-milestones-header">
+        <img src="assets/Clouds.png" alt="Clouds positioned under dragon" class="panel-clouds-under">
+        <img src="assets/MilestonesHeader.png" alt="Milestones header between clouds and milestones" class="panel-milestones-header">
         <div class="panel-milestones-wrap">
-          <img src="Milestones.png" alt="Milestones positioned under clouds" class="panel-milestones-under">
+          <img src="assets/Milestones.png" alt="Milestones positioned under clouds" class="panel-milestones-under">
           <div class="milestones-grid">
             <div class="milestones-cell">
-              <ul class="milestones-list">
-                <li>Write a program that opens a TCP socket and listens on a port</li>
-                <li>Send a request to it — from your browser or with curl localhost:port</li>
-                <li>Print the raw output</li>
-                <li>That text you see? That's HTTP. That's all it ever was.</li>
-              </ul>
+              <!-- Content moved to floating module -->
             </div>
             <div class="milestones-cell milestones-cell--step2">
               <div class="milestones-step2-block">
-                <p class="milestones-paragraph">Now parse that raw text. Pull out the method (GET, POST), the path (/about, /api/users), the headers. Write the parser yourself, split on newlines. Handle the edge cases.</p>
-                <p class="milestones-paragraph">Done when: your code can tell you what path, method any request is asking for.</p>
+                <!-- Content moved to floating module -->
               </div>
             </div>
             <div class="milestones-cell milestones-cell--step3">
-              <p class="milestones-paragraph">When someone asks for /about, your server needs to know what to do. Build that system. Design your API — what should using YOUR framework feel like? This is your creative decision. This is why no two Draco frameworks look the same.</p>
-              <p class="milestones-paragraph">Done when: different paths call different functions.</p>
+              <!-- Content moved to floating module -->
             </div>
             <div class="milestones-cell milestones-cell--step4">
-              <p class="milestones-paragraph milestones-paragraph--wide">After your router works, your handlers need to send something back to the browser. Write a function that puts a response onto the socket — status code, headers, body — and wrap it into something clean like <code>res.send()</code> or <code>res.json()</code>. Your design, your call. Now your framework can receive a request, route it, and reply to it. That's it. That's a working framework. Give it a name, publish it to npm, build something real on top of it, deploy it live, and send us the link.</p>
+              <!-- Content moved to floating module -->
             </div>
           </div>
         </div>
-        <img src="PrizesHeader 2.png" alt="Prizes header positioned below milestones" class="panel-prizes-header">
+        <img src="assets/PrizesHeader 2.png" alt="Prizes header positioned below milestones" class="panel-prizes-header">
         <div class="panel-prize-row" aria-hidden="true">
-            <img src="Prize.png" alt="Prize" class="panel-prize-item">
-            <img src="Prize.png" alt="Prize" class="panel-prize-item">
-            <img src="Prize.png" alt="Prize" class="panel-prize-item">
+            <div class="panel-prize-item-wrap">
+                <img src="assets/Prize - 1.png" alt="Prize" class="panel-prize-item">
+                <img src="assets/Hatchling.png" alt="Hatchling" class="panel-prize-label">
+            </div>
+            <div class="panel-prize-item-wrap">
+                <img src="assets/Prize - 2.png" alt="Prize" class="panel-prize-item">
+                <img src="assets/dragon.png" alt="Dragon" class="panel-prize-label">
+            </div>
+            <div class="panel-prize-item-wrap">
+                <img src="assets/Prize - 3.png" alt="Prize" class="panel-prize-item">
+                <img src="assets/ElderDragon.png" alt="Elder Dragon" class="panel-prize-label">
+            </div>
         </div>
-        <img src="FaqHeader.png" alt="FAQ header placed below prizes" class="panel-faq-header">
+        <img src="assets/FaqHeader.png" alt="FAQ header placed below prizes" class="panel-faq-header">
         <div class="panel-window-wrap" aria-hidden="true">
-          <img src="Window.png" alt="Window element placed below FAQ header" class="panel-window-img">
+          <img src="assets/Window.png" alt="Window element placed below FAQ header" class="panel-window-img">
           <div class="window-grid" role="group" aria-label="Window content grid">
             <div class="window-cell window-cell--eligible">
               <h3 class="window-question">Who is eligible?</h3>
@@ -81,7 +84,7 @@
             </div>
             <div class="window-cell window-cell--track">
               <h3 class="window-question">How do I track my time?</h3>
-              <p class="window-answer">We use our very own <a href="https://hackatime.hackclub.com" target="_blank" rel="noopener noreferrer">Hackatime</a> and <a href="https://lapse.hackclub.com" target="_blank" rel="noopener noreferrer">Lapse</a> to track your time!</p>
+              <p class="window-answer">We use our very own <a href="https://hackatime.hackclub.com" target="_blank" rel="noopener noreferrer">Hackatime</a> and <a href="https://lapse.hackclub.com" target="_blank" rel="noopener noreferrer">Lapse</a> to track your time. You earn $5 per hour of coding you do to spend on the prizes!</p>
             </div>
             <div class="window-cell window-cell--legit">
               <h3 class="window-question">Is this legit? What's Hack Club?</h3>
@@ -100,9 +103,11 @@
               <p class="window-answer">You can email me at <a href="mailto:shivanialive2007@gmail.com">shivanialive2007@gmail.com</a>! :)</p>
             </div>
           </div>
+          <p class="window-credit">A program for teens by teens, designed by Shivani :)</p>
         </div>
-        <img src="Fire.png" alt="Fire footer" class="panel-fire-footer">
+        <img src="assets/Fire.png" alt="Fire footer" class="panel-fire-footer">
     </section>
+    <script src="framework-response.js"></script>
     <script>
         (function () {
             var form = document.querySelector('.email-banner');
