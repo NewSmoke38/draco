@@ -18,7 +18,7 @@ body {
   min-height: -webkit-fill-available;
   position: relative;
   background-color: #f5f1e8;
-  background-image: url('olga-thelavart-HZm2XR0whdw-unsplash.jpg');
+  background-image: url('assets/olga-thelavart-HZm2XR0whdw-unsplash.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -60,7 +60,7 @@ body {
   inset: 0;
   z-index: -1;
   background-color: #f5f1e8;
-  background-image: url('olga-thelavart-HZm2XR0whdw-unsplash.jpg');
+  background-image: url('assets/olga-thelavart-HZm2XR0whdw-unsplash.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

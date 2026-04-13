@@ -27,10 +27,8 @@
             <p class="email-meta">1 May'26 - 30 May'26 | Ages 13 -18</p>
             <form class="email-banner" action="#" method="post" autocomplete="on">
                 <div class="email-banner__inner">
-                    <img src="assets/Email.png" alt="" class="email-banner__art">
-                    <label for="signup-email" class="visually-hidden">Email address</label>
-                    <input type="email" id="signup-email" name="email" class="email-banner__input" autocomplete="email" inputmode="email" required>
-                    <button type="button" class="email-banner__submit" aria-label="Sign up"></button>
+                    <img src="assets/RSVP 2.png" alt="" class="email-banner__art">
+                    <button type="button" class="email-banner__submit" style="width: 100%; left: 0;" aria-label="Sign up"></button>
                 </div>
             </form>
             <img src="assets/MainDragon.png" alt="Dragon illustration" class="dragon">
@@ -133,10 +131,8 @@
         <p class="m-hero__meta">1 May'26 - 30 May'26 | Ages 13 -18</p>
 
         <div class="m-hero__email-wrap">
-          <img src="assets/Email.png" alt="" class="m-hero__email-art">
-          <label for="m-signup-email" class="visually-hidden">Email address</label>
-          <input type="email" id="m-signup-email" name="email" class="m-hero__email-input" autocomplete="email" inputmode="email" required>
-          <button type="button" class="m-hero__email-btn" aria-label="Sign up"></button>
+          <img src="assets/RSVP 2.png" alt="" class="m-hero__email-art">
+          <button type="button" class="m-hero__email-btn" style="width: 100%; left: 0;" aria-label="Sign up"></button>
         </div>
 
         <img src="assets/MainDragon.png" alt="Dragon illustration" class="m-hero__dragon">
@@ -271,27 +267,32 @@
     <script src="framework-response.js"></script>
     <script>
         (function () {
-            var form = document.querySelector('.email-banner');
             var btn = document.querySelector('.email-banner__submit');
             var inner = document.querySelector('.email-banner__inner');
+            var mBtn = document.querySelector('.m-hero__email-btn');
             var motionOk = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-            form?.addEventListener('submit', function (e) {
-                e.preventDefault();
-            });
+            function openForm() {
+                window.location.href = "https://forms.fillout.com/t/oi7K6uDdMxus";
+            }
 
             btn?.addEventListener('click', function (e) {
                 e.preventDefault();
-                if (!inner || !motionOk) {
+                if (!inner || !motionOk || inner.classList.contains('email-banner__inner--clicked')) {
+                    openForm();
                     return;
                 }
-                inner.classList.remove('email-banner__inner--clicked');
-                void inner.offsetWidth;
                 inner.classList.add('email-banner__inner--clicked');
                 inner.addEventListener('animationend', function onEnd() {
                     inner.removeEventListener('animationend', onEnd);
                     inner.classList.remove('email-banner__inner--clicked');
+                    openForm();
                 });
+            });
+
+            mBtn?.addEventListener('click', function (e) {
+                e.preventDefault();
+                openForm();
             });
         })();
     </script>
