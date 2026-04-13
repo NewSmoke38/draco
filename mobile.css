@@ -99,6 +99,7 @@
 /* Email signup on mobile */
 .m-hero__email-wrap {
   position: relative;
+  z-index: 5; /* keep RSVP art above overlapping dragon artwork */
   width: 88vw;
   max-width: 380px;
   margin-top: 16px;

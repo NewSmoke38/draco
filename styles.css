@@ -163,6 +163,8 @@ body {
 }
 
 .email-banner {
+  position: relative;
+  z-index: 5; /* above .dragon (z-index: 3) so RSVP artwork isn’t covered by the dragon PNG */
   display: block;
   width: auto;
   max-width: min(88vw, 560px);
