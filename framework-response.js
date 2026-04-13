@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cardsData = {
         'response': {
             id: 'card-response',
-            text: `<p class="framework-text">After your router works, your handlers need to send something back to the browser. Write a function that puts a response onto the socket — status code, headers, body — and wrap it into something clean like <code>res.send()</code> or <code>res.json()</code>. Your design, your call. Now your framework can receive a request, route it, and reply to it. That's it. That's a working framework. Give it a name, publish it to npm, build a real web-app, and write it's backend using your own framework, deploy it live, and send us the link!</p>`,
+            text: `<p class="framework-text">After your router works, your handlers need to send something back to the browser. Write a function that puts a response onto the socket — status code, headers, body — and wrap it into something clean like <code>res.send()</code> or <code>res.json()</code>. Your design, your call. Now your framework can receive a request, route it, and reply to it. That's it. That's a working framework. Give it a name, publish it to npm, build a real web-app, even with a simple frontend (html, css, js) would work, and write it's backend using YOUR own framework, deploy it live, and send us the link!</p>`,
             x: 18.58, y: 85.75, w: 63.42, h: 9.33, fs: 1.4,
             isLocked: !devMode // Always locked if not in dev mode
         },

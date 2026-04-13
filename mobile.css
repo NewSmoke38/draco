@@ -1,0 +1,433 @@
+/* ============================================================
+   MOBILE LAYOUT — Completely different structure for phones
+   Breakpoint: max-width 768px
+   ============================================================ */
+
+/* ── Hide desktop, show mobile ── */
+@media (max-width: 768px) {
+
+  /* Hide the absolute-positioned desktop panels */
+  .panel--cover,
+  .panel--next {
+    display: none !important;
+  }
+
+  /* Show the mobile wrapper */
+  .mobile-layout {
+    display: flex !important;
+  }
+
+  body {
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+  }
+}
+
+/* By default, hide mobile layout on desktop */
+.mobile-layout {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+
+/* ── MOBILE HERO ── */
+.m-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100dvh;
+  min-height: 100svh;
+  padding: 0 16px;
+  overflow: visible;
+}
+
+.m-hero__flag {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  z-index: 10;
+  width: 80px;
+  line-height: 0;
+}
+
+.m-hero__flag img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.m-hero__headline {
+  margin-top: 14vh;
+  width: 72vw;
+  max-width: 340px;
+  line-height: 0;
+}
+
+.m-hero__headline img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.m-hero__subheader {
+  font-family: 'Jiayou Akira', "Marker Felt", "Brush Script MT", cursive;
+  color: #820000;
+  text-align: center;
+  font-size: clamp(16px, 5vw, 28px);
+  line-height: 1.15;
+  margin-top: 12px;
+  padding: 0 8px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.m-hero__meta {
+  font-family: 'Jiayou Akira', "Marker Felt", "Brush Script MT", cursive;
+  color: #820000;
+  text-align: center;
+  font-size: clamp(13px, 3.6vw, 20px);
+  line-height: 1.2;
+  margin-top: 8px;
+}
+
+/* Email signup on mobile */
+.m-hero__email-wrap {
+  position: relative;
+  width: 88vw;
+  max-width: 380px;
+  margin-top: 16px;
+  line-height: 0;
+}
+
+.m-hero__email-art {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.m-hero__email-input {
+  position: absolute;
+  left: 3%;
+  top: 18%;
+  width: 64%;
+  height: 60%;
+  border: 0;
+  padding: 0 8px 4px 14px;
+  background: transparent;
+  color: #6b0f1a;
+  caret-color: #6b0f1a;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: clamp(12px, 3.4vw, 16px);
+  line-height: 1.15;
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.m-hero__email-input::placeholder {
+  color: #6b0f1a;
+  opacity: 0.88;
+}
+
+.m-hero__email-input:focus {
+  outline: none;
+}
+
+.m-hero__email-btn {
+  position: absolute;
+  left: 69%;
+  top: 18%;
+  width: 28%;
+  height: 60%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Dragon on mobile */
+.m-hero__dragon {
+  display: block;
+  width: 92vw;
+  max-width: 420px;
+  height: auto;
+  margin-top: 8px;
+  pointer-events: none;
+}
+
+/* ── CLOUDS TRANSITION ── */
+.m-clouds {
+  width: 110%;
+  margin-top: -14vw;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+  position: relative;
+}
+
+.m-clouds img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── MILESTONES ── */
+.m-milestones {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.m-milestones__header {
+  width: 72vw;
+  max-width: 320px;
+  margin-bottom: 28px;
+}
+
+.m-milestones__header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Individual milestone cards on mobile — stacked vertically */
+.m-milestone-card {
+  width: 92vw;
+  max-width: 420px;
+  background: rgba(245, 241, 232, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 2px solid rgba(130, 0, 0, 0.18);
+  border-radius: 16px;
+  padding: 22px 20px;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+}
+
+.m-milestone-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #820000, #c42b2b, #820000);
+  border-radius: 16px 16px 0 0;
+}
+
+.m-milestone-card__number {
+  font-family: 'Jiayou Akira', "Marker Felt", cursive;
+  font-size: 13px;
+  color: #c42b2b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.m-milestone-card__title {
+  font-family: 'Jiayou Akira', "Marker Felt", cursive;
+  font-size: clamp(20px, 5.5vw, 28px);
+  color: #820000;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.m-milestone-card__body {
+  color: #820000;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(13px, 3.6vw, 16px);
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.m-milestone-card__body code {
+  font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+  font-size: 0.9em;
+  font-weight: normal;
+  background: rgba(130, 0, 0, 0.08);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+.m-milestone-card__body ul {
+  list-style: disc;
+  padding-left: 1.2em;
+  margin: 0;
+}
+
+.m-milestone-card__body li {
+  margin-bottom: 6px;
+}
+
+/* ── PRIZES ── */
+.m-prizes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px 20px;
+}
+
+.m-prizes__header {
+  width: 68vw;
+  max-width: 300px;
+  margin-bottom: 28px;
+}
+
+.m-prizes__header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.m-prizes__grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.m-prize-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 78vw;
+  max-width: 340px;
+}
+
+.m-prize-card__img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.22));
+}
+
+.m-prize-card__label {
+  width: 68%;
+  height: auto;
+  object-fit: contain;
+  margin-top: -2px;
+}
+
+/* ── FAQ ── */
+.m-faq {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 16px 24px;
+}
+
+.m-faq__header {
+  width: 72vw;
+  max-width: 320px;
+  margin-bottom: 24px;
+}
+
+.m-faq__header img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* FAQ cards stacked on mobile */
+.m-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 92vw;
+  max-width: 420px;
+}
+
+.m-faq-card {
+  background: rgba(245, 241, 232, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(130, 0, 0, 0.14);
+  border-radius: 14px;
+  padding: 18px 18px;
+  pointer-events: auto;
+}
+
+.m-faq-card__q {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(14px, 4vw, 18px);
+  color: #820000;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.m-faq-card__a {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(13px, 3.4vw, 15px);
+  color: #000;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.m-faq-card__a a {
+  color: #820000;
+  text-decoration: underline;
+}
+
+.m-faq-card__a a:hover {
+  opacity: 0.75;
+}
+
+.m-faq-card__resources {
+  list-style: disc;
+  padding-left: 1.2em;
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: clamp(13px, 3.4vw, 15px);
+  color: #820000;
+}
+
+.m-faq-card__resources a {
+  color: #820000;
+  text-decoration: underline;
+}
+
+.m-faq-card__resources li {
+  margin-bottom: 6px;
+}
+
+/* ── CREDIT ── */
+.m-credit {
+  text-align: center;
+  color: #820000;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  padding: 12px 16px 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── FIRE FOOTER ── */
+.m-fire {
+  width: 100%;
+  margin-top: 24px;
+  line-height: 0;
+}
+
+.m-fire img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
