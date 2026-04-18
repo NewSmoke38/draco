@@ -833,7 +833,9 @@ body {
   grid-template-columns: repeat(3, 1fr); /* 3 columns x 2 rows = 6 cells */
   grid-template-rows: repeat(2, 1fr);
   gap: 3%;
-  pointer-events: none;
+  /* Must be auto: inherited pointer-events:none from .panel-window-wrap would swallow all link clicks */
+  pointer-events: auto;
+  transform: translateY(-5.5%);
 }
 
 /* Temporary editing grid that overlays the window for uniform placement */
@@ -1004,7 +1006,8 @@ body {
   color: #820000;
   font-size: 0.95rem;
   letter-spacing: 0.03em;
-  margin-top: 1em;
+  margin-top: 0.1em;
+  transform: translateY(-1.45em);
   pointer-events: none;
   user-select: none;
   line-height: 1.5;
@@ -1012,7 +1015,7 @@ body {
 
 .window-credit-link {
   display: inline-block;
-  margin-top: 0.35em;
+  margin-top: 0.2em;
   font-weight: normal;
   color: #820000;
   text-decoration: underline;
